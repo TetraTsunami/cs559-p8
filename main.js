@@ -24,7 +24,7 @@ const models = [];
 const modelDefinitions = [
   {
     objURL: "./goldfish.obj",
-    texURLs: ["./tex_goldfish.png"],
+    texURLs: ["./goldfish.png"],
     vertexShaderSrc: vs,
     fragmentShaderSrc: fs,
     scale: [0.25, 0.25, 0.25],
@@ -36,8 +36,8 @@ const modelDefinitions = [
     position: [0, -100, 0],
   },
   {
-    objURL: "./Rock1.obj",
-    texURLs: ["./Rock-Texture-Surface.jpg"],
+    objURL: "./rock.obj",
+    texURLs: ["./rock.jpg"],
     vertexShaderSrc: rvs,
     fragmentShaderSrc: rfs,
     position: [200, -100, 50],
@@ -45,8 +45,8 @@ const modelDefinitions = [
     rotation: [Math.PI, 0, 0],
   },
   {
-    objURL: "./Rock1.obj",
-    texURLs: ["./Rock-Texture-Surface.jpg"],
+    objURL: "./rock.obj",
+    texURLs: ["./rock.jpg"],
     vertexShaderSrc: rvs,
     fragmentShaderSrc: rfs,
     position: [-20, -120, -140],
@@ -54,8 +54,8 @@ const modelDefinitions = [
     rotation: [Math.PI, 2, 0],
   },
   {
-    objURL: "./Rock1.obj",
-    texURLs: ["./Rock-Texture-Surface.jpg"],
+    objURL: "./rock.obj",
+    texURLs: ["./rock.jpg"],
     vertexShaderSrc: rvs,
     fragmentShaderSrc: rfs,
     position: [-150, -100, 140],
