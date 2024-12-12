@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    #config {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 10px;
+      display: grid;
+      grid-template-columns: max-content auto max-content auto;
+      gap: 10px;
+      width: max-content;
+      margin: 0 auto;
+    }
+  </style>
+  <head>
+    <title>P7</title>
+    <!-- gl-matrix library import -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix.js" integrity="sha512-zhHQR0/H5SEBL3Wn6yYSaTTZej12z0hVZKOv3TwCUXT1z5qeqGcXJLLrbERYRScEDDpYIJhPC1fk31gqR783iQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="shader.glsl.js"></script>
+    <script type="module" src="caustic.glsl.js"></script>
+    <script src="webgl-debug.js"></script>
+  </head>
+  <body>
+    <canvas id="canvas" 
+    width="600" height="600">
+  </canvas>
+  <div id="config">
+    <label for="pos">Rotation</label>
+    <input type="range" id="rot" value="50" min="0" max="100" />
+    <label for="pos">Distance</label>
+    <input type="range" id="dist" value="50" min="1" max="100" />
+    <label for="pos">Secret Third Thing</label>
+    <input type="range" id="fish" value="180" min="1" max="360" />
+  </div>
+  </body>
+</html>
