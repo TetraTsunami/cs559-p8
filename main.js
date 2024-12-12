@@ -15,6 +15,8 @@ const slider1 = document.getElementById("rot");
 const slider2 = document.getElementById("dist");
 /** @type {HTMLInputElement} */
 const sliderFish = document.getElementById("fish");
+/** @type {HTMLInputElement} */
+const speed = document.getElementById("speed");
 
 /** @type Model[] */
 const models = [];
@@ -64,6 +66,7 @@ async function start() {
     const angle2 = sliderFish.value * 0.01;
     const dist = slider2.value * 0.02;
     const time = performance.now() * 0.001;
+    boidsController.maxEntitySpeed = speed.value * 0.02;
     canvas.width = window.innerWidth;
     gl.viewport(0, 0, canvas.width, canvas.height);
     // camera position
