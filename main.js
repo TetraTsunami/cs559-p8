@@ -2,6 +2,7 @@
 // https://stackoverflow.com/questions/58225496/best-way-to-load-non-js-scripts-from-an-assets-folder-getelementbyid-vs-fetch
 import { vertexSource as vs, fragmentSource as fs } from "./shader.glsl.js";
 import { vertexSource as cvs, fragmentSource as cfs } from "./caustic.glsl.js";
+import { vertexSource as rvs, fragmentSource as rfs } from "./rock.glsl.js";
 import BoidsController from "./BoidsController.js";
 import Entity from "./Entity.js";
 import Model from "./model.js";
@@ -33,6 +34,33 @@ const modelDefinitions = [
     vertexShaderSrc: cvs,
     fragmentShaderSrc: cfs,
     position: [0, -100, 0],
+  },
+  {
+    objURL: "./Rock1.obj",
+    texURLs: ["./Rock-Texture-Surface.jpg"],
+    vertexShaderSrc: rvs,
+    fragmentShaderSrc: rfs,
+    position: [200, -100, 50],
+    scale: [50, 50, 50],
+    rotation: [Math.PI, 0, 0],
+  },
+  {
+    objURL: "./Rock1.obj",
+    texURLs: ["./Rock-Texture-Surface.jpg"],
+    vertexShaderSrc: rvs,
+    fragmentShaderSrc: rfs,
+    position: [-20, -120, -140],
+    scale: [50, 50, 100],
+    rotation: [Math.PI, 2, 0],
+  },
+  {
+    objURL: "./Rock1.obj",
+    texURLs: ["./Rock-Texture-Surface.jpg"],
+    vertexShaderSrc: rvs,
+    fragmentShaderSrc: rfs,
+    position: [-150, -100, 140],
+    scale: [50, 50, 50],
+    rotation: [Math.PI, 2, 0],
   },
 ];
 const boidsController = new BoidsController(2000, 600, 2000, 10);
@@ -93,8 +121,10 @@ async function start() {
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-    // Draw seafloor
-    models[1].draw(tCamera, tProjection, time);
+    // Draw seafloor and other models
+    for (let i = 1; i < models.length; i++) {
+      models[i].draw(tCamera, tProjection, time);
+    }
 
     // Render the fish boids
     const entities = boidsController.getFlockEntities();
