@@ -31,14 +31,14 @@ uniform sampler2D texSampler1;
 uniform mat4 uMV;
 uniform mat3 uMVn;
 
-const vec3  lightV    = vec3(0.0,0,1.0);
+const vec3  lightV    = vec3(0.0,1.0,1.0);
 const float lightI    = 1.0; 
-const float ambientC  = 0.5;
+const float ambientC  = 0.4;
 const float diffuseC  = 0.4;
-const float specularC = 0.3;
-const float specularE = 32.0;
-const vec3  lightCol  = vec3(1.0,1.0,1.0);
-const vec3  objectCol = vec3(1.0,0.6,0.0); // yellow-ish orange
+const float specularC = 0.4;
+const float specularE = 8.0;
+const vec3  lightCol  = vec3(0.6,0.6,1.0);
+const vec3  objectCol = vec3(0.6,0.6,1.0);
 vec2 blinnPhongDir(vec3 lightDir, vec3 n, float lightInt, float Ka,
 	float Kd, float Ks, float shininess) {
 	vec3 s = normalize(lightDir);

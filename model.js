@@ -1,9 +1,9 @@
-/* globals mat3, mat4, WebGLDebugUtils */
+/* globals mat3, mat4 */
 import loadOBJ from "./parse-obj.js";
 /** @type {HTMLCanvasElement} */
 const canvas = document.getElementById("canvas");
 /** @type {WebGLRenderingContext} */
-const gl = WebGLDebugUtils.makeDebugContext(canvas.getContext("webgl"));
+const gl = canvas.getContext("webgl");
 
 function compileShaders(vertexSource, fragmentSource) {
   // Compile vertex shader
